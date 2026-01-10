@@ -4,7 +4,7 @@ html, body{
 }
 
 body{
-    background-color: rgb(233, 150, 199);
+    background-color: #C1E8FF;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0;
     padding: 0;
@@ -14,8 +14,8 @@ li a{
     font-weight: bold;
 }
 
-header{
-    background-color: rgb(185, 62, 134);
+header {
+    background-color: #021024;
 }
 
 .topo{
@@ -35,13 +35,13 @@ header{
 
 .nav-1 {
     text-align: center;
-    background-color: rgb(233, 150, 199);
+    background-color: #052659;
     padding: 10px 0;
 }
 
 .nav-2 {
     text-align: center;
-    background-color: rgb(228, 187, 211);
+    background-color: #7DA0CA;
     padding: 8px 0;
 }
 
@@ -78,12 +78,12 @@ main{
     background-color: white;
     margin: 20px;
     padding: 20px;
-    border: 2px solid rgb(185, 62, 134);
+    border: 2px solid #021024;
     border-radius: 10px;
 }
 
 footer{
-    background-color: rgb(185, 62, 134);
+    background-color: #7DA0CA;
     text-align: center;
     color: white;
     padding: 15px 0;
