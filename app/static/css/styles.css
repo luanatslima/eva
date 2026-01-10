@@ -1,0 +1,94 @@
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    background-color: rgb(233, 150, 199);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+li a{
+    font-weight: bold;
+}
+
+header{
+    background-color: rgb(185, 62, 134);
+}
+
+.topo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.topo h1{
+    font-size: 50px;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+}
+
+.nav-1 {
+    text-align: center;
+    background-color: rgb(233, 150, 199);
+    padding: 10px 0;
+}
+
+.nav-2 {
+    text-align: center;
+    background-color: rgb(228, 187, 211);
+    padding: 8px 0;
+}
+
+nav li{
+    display: inline;
+    margin: 0 15px;
+    font-size: 20px;
+}
+
+nav ul { 
+    margin: 0; 
+    padding: 0; 
+}
+
+li a{
+    color: white;
+    text-decoration: none;
+}
+
+main{
+    text-align: center;
+    margin: 40px;
+}
+
+main h2{
+    font-size: 40px;
+}
+
+main p{
+    font-size: 20px;
+}
+
+main{
+    background-color: white;
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid rgb(185, 62, 134);
+    border-radius: 10px;
+}
+
+footer{
+    background-color: rgb(185, 62, 134);
+    text-align: center;
+    color: white;
+    padding: 15px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-weight: bold;
+}
