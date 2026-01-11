@@ -1,45 +1,47 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eva</title>
-    <link rel="stylesheet" href="/static/css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eva</title>
+  <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 <body>
-    <header>
-        <div class="topo">
-            <img src="" alt="Logo Eva" class="logo">
-            <h1>Eva</h1>
-        </div>
-        
-        <nav class="nav-1">
-            <ul>
-                <li><a href="#">Clubes do Livro</a></li>
-                <li><a href="#">Editoras</a></li>
-                <li><a href="#">Livros</a></li>
-            </ul>
-        </nav>
-        <nav class="nav-2">
-            <ul>
-                <li><a href="#">Portfólio</a></li>
-                <li><a href="#">Dúvidas</a></li>
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Configurações</a></li>
-                <li><a href="#">Perfil</a></li>
-            </ul>
-        </nav>
-    </header>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo-area">
+        <img src="/static/img/logo-eva-2.png" alt="Logo Eva" class="logo">
+      </div>
+      <nav class="nav-menu">
+        <ul class="nav-principal">
+          <li><a href="#">Clubes do Livro</a></li>
+          <li><a href="#">Editoras</a></li>
+          <li><a href="#">Livros</a></li>
+        </ul>
+        <hr class="divisor">
+        <ul class="nav-secundaria">
+          <li><a href="#">Portfólio</a></li>
+          <li><a href="#">Dúvidas</a></li>
+          <li><a href="#">Sobre</a></li>
+          <li><a href="#">Configurações</a></li>
+          <li><a href="#">Perfil</a></li>
+        </ul>
+      </nav>
+    </aside>
 
-    <main>
-        <section>
-            <h2>Bem-vindos a Eva</h2>
-            <p>Este é o site Eva, uma plataforma dedicada a...</p>
-        </section>
-    </main>
-
-    <footer>
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
+      <section class="welcome">
+        <h2>Bem-vindos a Eva</h2>
+        <p>
+          Este é o site Eva, uma plataforma dedicada a conectar leitores, clubes do livro e editoras em um só lugar. Explore nosso catálogo, participe de discussões e descubra sua próxima leitura favorita.
+        </p>
+      </section>
+      <footer>
         <p>&copy; Eva 2026</p>
-    </footer>
+      </footer>
+    </main>
+  </div>
 </body>
 </html>
