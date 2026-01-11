@@ -4,7 +4,7 @@ html, body{
 }
 
 body{
-    background-color: #C1E8FF;
+    background-color: #E8D8C4;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0;
     padding: 0;
@@ -15,7 +15,7 @@ li a{
 }
 
 header {
-    background-color: #021024;
+    background-color: #561C24;
 }
 
 .topo{
@@ -35,13 +35,13 @@ header {
 
 .nav-1 {
     text-align: center;
-    background-color: #052659;
+    background-color: #6D2932;
     padding: 10px 0;
 }
 
 .nav-2 {
     text-align: center;
-    background-color: #7DA0CA;
+    background-color: #C7B7A3;
     padding: 8px 0;
 }
 
@@ -83,7 +83,7 @@ main{
 }
 
 footer{
-    background-color: #7DA0CA;
+    background-color: #C7B7A3;
     text-align: center;
     color: white;
     padding: 15px 0;
