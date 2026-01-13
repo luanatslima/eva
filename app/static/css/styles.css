@@ -84,14 +84,19 @@ body {
     justify-content: space-between; 
 } 
 
+.welcome{
+    background-color: #561C24;
+    color: white;
+}
+
 .welcome h2 { 
     font-size: 32px; 
-    color: #333; 
+    color: white; 
     margin-bottom: 16px; 
 
 } .welcome p { 
     font-size: 18px; 
-    color: #666; 
+    color: white; 
 } 
     
 /* Rodapé */ 
@@ -103,3 +108,7 @@ footer {
     text-align: center; 
 }
 
+.container-busca{
+    padding: 10px;
+    background-color: #561C24;
+}
