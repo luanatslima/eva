@@ -1,184 +1,9 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eva</title>
-  <link rel="stylesheet" href="/static/css/styles.css">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f9f9f9;
-    }
+{% extends "base.html" %}
+{% load static %}
 
-    .container {
-      display: flex;
-      height: 100vh;
-    }
+{% block title %}Index{% endblock %}
 
-    /* Sidebar */
-    .sidebar {
-      width: 180px;
-      background-color: rgb(86, 28, 36);
-      color: rgb(232, 216, 196);
-      display: flex;
-      flex-direction: column;
-      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    }
-
-    .logo-area {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 24px;
-      border-bottom: 1px solid #ccc;
-    }
-
-    .logo {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 8px;
-    }
-
-    .titulo {
-      font-size: 24px;
-      color: rgb(232, 216, 196);
-    }
-
-    .nav-menu {
-      padding: 16px;
-      flex: 1;
-    }
-
-    .nav-menu ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .nav-menu li {
-      margin-bottom: 12px;
-    }
-
-    .nav-menu a {
-      display: block;
-      padding: 12px 16px;
-      border-radius: 8px;
-      color: rgb(232, 216, 196);
-      text-decoration: none;
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    .nav-menu a:hover {
-      background-color: #f3e8ff;
-      color: #561C24;
-    }
-
-    .divisor {
-      margin: 24px 0;
-      border: none;
-      border-top: 1px solid #ccc;
-    }
-
-    /* Conteúdo Principal */ 
-    .main-content { 
-        flex: 1; 
-        padding: 40px; 
-        overflow-y: auto; 
-        display: flex; 
-        flex-direction: column; 
-        justify-content: space-between; 
-    } 
-
-    .welcome{
-        color: white;
-        padding: 20px;
-        border-radius: 10px;;
-    }
-
-    .welcome h2 { 
-        font-size: 32px; 
-        color: white; 
-        margin-bottom: 16px; 
-
-    } .welcome p { 
-        font-size: 18px; 
-        color: white; 
-    } 
-        
-    /* Rodapé */ 
-    footer { 
-        padding-top: 20px; 
-        border-top: 1px solid #ccc; 
-        color: #666; 
-        font-size: 14px; 
-        text-align: center; 
-    }
-
-    /* Carrossel */
-    .carousel {
-      margin-top: 0px;
-      margin-bottom: 20px;
-      position: relative;
-    }
-
-    .carousel-container {
-      overflow: hidden;
-      width: 100%;
-      border-radius: 10px;
-      border: 1px solid #ccc;
-    }
-
-    .carousel-track {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
-
-    .carousel-item {
-      min-width: 100%;
-      padding: 20px;
-      background-color: #e8d8c4;
-      color: #561C24;
-      font-size: 22px;
-      text-align: center;
-      box-sizing: border-box;
-    }
-
-    .carousel-item p {
-      font-size: 15px;
-      margin: 0px 30px 0px;;
-    }
-
-    .carousel-controls {
-      position: absolute;
-      top: 50%;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      transform: translateY(-50%);
-    }
-
-    .carousel-controls button {
-      background-color: rgba(86, 28, 36, 0.8);
-      color: white;
-      border: none;
-      padding: 12px;
-      margin: 0px 10px;
-      cursor: pointer;
-      font-size: 18px;
-      border-radius: 50%;
-      transition: background-color 0.3s;
-    }
-
-    .carousel-controls button:hover {
-      background-color: rgba(86, 28, 36, 1);
-    }
-
-    </style>
-</head>
-<body>
+{% block content %}
   <div class="container">
     <!-- Sidebar -->
     <aside class="sidebar">
@@ -215,7 +40,10 @@
         <div class="carousel-container">
           <div class="carousel-track">
             <div class="carousel-item">
-              <h3>Bem-vindos a Eva!</h3>
+              <div class="logo-area-carrossel">
+                <h3>Bem-vindos a</h3>
+                <img src="/static/img/logo-eva.png" alt="Logo Eva" class="logo-carrossel">
+              </div>
               <p>Este é o site Eva, uma plataforma dedicada a conectar leitores, clubes do livro e editoras em um só lugar.</p>
               <p>Explore nosso catálogo, participe de discussões e descubra sua próxima leitura favorita.</p>
             </div>
@@ -270,7 +98,4 @@
       updateCarousel();
     });
   </script>
-
-</body>
-
-</html>
+{% endblock %}
