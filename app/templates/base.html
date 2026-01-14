@@ -193,10 +193,135 @@
       border-radius: 8px;
     }
 
+    /* Carrossel em Blocos */
+    .block-carousel {
+      margin-top: 30px;
+      margin-bottom: 50px;
+    }
+
+    .block-carousel-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .block-carousel-container {
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .block-carousel-track {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .block-item {
+      flex: 0 0 25%;
+      box-sizing: border-box;
+      padding: 40px;
+      text-align: center;
+      text-decoration: none;
+      color: #561C24;
+      transition: transform 0.3s;
+      border: 2px solid #561C24;
+      margin: 10px;
+      border-radius: 10px;
+    }
+
+    .block-item:hover {
+      background-color: #e8d8c4;
+      color: #561C24;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(86, 28, 36, 0.2);
+    }
+
+    .block-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 8px;
+    }
+
+    .block-item p {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .block-prev,
+    .block-next {
+      background-color: white;
+      color: rgba(86, 28, 36, 0.8);
+      border: none;
+      padding: 12px;
+      cursor: pointer;
+      font-size: 18px;
+      border-radius: 50%;
+      z-index: 1;
+      transition: background-color 0.3s;
+    }
+
+    .block-prev:hover,
+    .block-next:hover {
+      background-color: rgba(86, 28, 36, 1);
+      color: white;
+    }
+
   </style>
 </head>
 <body>
-    {% block content %}{% endblock %}
+  {% block content %}{% endblock %}
+
+  <script>
+    const track = document.querySelector('.carousel-track');
+    const items = document.querySelectorAll('.carousel-item');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+    let index = 0;
+
+    function updateCarousel() {
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    prevBtn.addEventListener('click', () => {
+      index = (index > 0) ? index - 1 : items.length - 1;
+      updateCarousel();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      index = (index < items.length - 1) ? index + 1 : 0;
+      updateCarousel();
+    });
+  </script>
+
+  <script>
+  const blockTrack = document.querySelector('.block-carousel-track');
+  const blockItems = document.querySelectorAll('.block-item');
+  const blockPrev = document.querySelector('.block-prev');
+  const blockNext = document.querySelector('.block-next');
+  let blockIndex = 0;
+
+  const visibleCount = 4;
+  const scrollStep = 2;
+  const maxIndex = blockItems.length - visibleCount;
+
+  function updateBlockCarousel() {
+    const itemWidth = blockItems[0].offsetWidth;
+    blockTrack.style.transform = `translateX(-${blockIndex * itemWidth}px)`;
+  }
+
+  blockPrev.addEventListener('click', () => {
+    blockIndex = Math.max(0, blockIndex - scrollStep);
+    updateBlockCarousel();
+  });
+
+  blockNext.addEventListener('click', () => {
+    blockIndex = Math.min(maxIndex, blockIndex + scrollStep);
+    updateBlockCarousel();
+  });
+
+  window.addEventListener('resize', updateBlockCarousel);
+  </script>
 </body>
 
 </html>
