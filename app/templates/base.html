@@ -145,6 +145,14 @@
       font-size: 22px;
       text-align: center;
       box-sizing: border-box;
+      text-decoration: none;  
+      display: block;      
+      border: 2px solid #561C24;
+      border-radius: 10px;  
+    }
+
+    .carousel-item:hover {
+      cursor: pointer;
     }
 
     .carousel-item p {
@@ -218,19 +226,22 @@
     .block-item {
       flex: 0 0 25%;
       box-sizing: border-box;
-      padding: 40px;
+      padding: 16px;          
       text-align: center;
       text-decoration: none;
       color: #561C24;
+      background-color: #e8d8c4;
       transition: transform 0.3s;
       border: 2px solid #561C24;
       margin: 10px;
       border-radius: 10px;
+      height: 190px;          
+      display: flex;          
+      flex-direction: column; 
+      justify-content: space-between;
     }
 
     .block-item:hover {
-      background-color: #e8d8c4;
-      color: #561C24;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(86, 28, 36, 0.2);
     }
@@ -250,8 +261,8 @@
 
     .block-prev,
     .block-next {
-      background-color: white;
-      color: rgba(86, 28, 36, 0.8);
+      background-color: rgba(86, 28, 36, 0.8);
+      color: white;
       border: none;
       padding: 12px;
       cursor: pointer;
@@ -266,62 +277,127 @@
       background-color: rgba(86, 28, 36, 1);
       color: white;
     }
-
   </style>
 </head>
+
 <body>
   {% block content %}{% endblock %}
 
   <script>
-    const track = document.querySelector('.carousel-track');
-    const items = document.querySelectorAll('.carousel-item');
-    const prevBtn = document.querySelector('.prev');
-    const nextBtn = document.querySelector('.next');
-    let index = 0;
+  // Carrossel 1
+  (function() {
+      const track = document.querySelector('.carousel-track');
+      const items = document.querySelectorAll('.carousel-item');
+      const prevBtn = document.querySelector('.prev');
+      const nextBtn = document.querySelector('.next');
 
-    function updateCarousel() {
+      // 1. Clonagem
+      const firstClone = items[0].cloneNode(true);
+      const lastClone = items[items.length - 1].cloneNode(true);
+      
+      track.appendChild(firstClone);
+      track.prepend(lastClone);
+
+      // 2. Variáveis de estado
+      let index = 1; 
+      let isTransitioning = false;
+      const totalOriginalItems = items.length;
+
+      // 3. Posicionamento Inicial
+      track.style.transition = 'none';
       track.style.transform = `translateX(-${index * 100}%)`;
-    }
 
-    prevBtn.addEventListener('click', () => {
-      index = (index > 0) ? index - 1 : items.length - 1;
-      updateCarousel();
-    });
+      function move() {
+          if (isTransitioning) return;
+          isTransitioning = true;
+          track.style.transition = "transform 0.5s ease-in-out";
+          track.style.transform = `translateX(-${index * 100}%)`;
+      }
 
-    nextBtn.addEventListener('click', () => {
-      index = (index < items.length - 1) ? index + 1 : 0;
-      updateCarousel();
-    });
-  </script>
+      nextBtn.addEventListener('click', () => {
+          if (isTransitioning) return;
+          index++;
+          move();
+      });
 
-  <script>
-  const blockTrack = document.querySelector('.block-carousel-track');
-  const blockItems = document.querySelectorAll('.block-item');
-  const blockPrev = document.querySelector('.block-prev');
-  const blockNext = document.querySelector('.block-next');
-  let blockIndex = 0;
+      prevBtn.addEventListener('click', () => {
+          if (isTransitioning) return;
+          index--;
+          move();
+      });
 
-  const visibleCount = 4;
-  const scrollStep = 2;
-  const maxIndex = blockItems.length - visibleCount;
+      track.addEventListener('transitionend', () => {
+          isTransitioning = false;
 
-  function updateBlockCarousel() {
-    const itemWidth = blockItems[0].offsetWidth;
-    blockTrack.style.transform = `translateX(-${blockIndex * itemWidth}px)`;
-  }
+          if (index === totalOriginalItems + 1) {
+              track.style.transition = "none";
+              index = 1;
+              track.style.transform = `translateX(-${index * 100}%)`;
+          }
+          
+          if (index === 0) {
+              track.style.transition = "none";
+              index = totalOriginalItems;
+              track.style.transform = `translateX(-${index * 100}%)`;
+          }
+      });
+  })();
+</script>
 
-  blockPrev.addEventListener('click', () => {
-    blockIndex = Math.max(0, blockIndex - scrollStep);
-    updateBlockCarousel();
-  });
+<script>
+  // Carrossel 2
+  (function() {
+      const track = document.querySelector('.block-carousel-track');
+      const items = document.querySelectorAll('.block-item');
+      const prevBtn = document.querySelector('.block-prev');
+      const nextBtn = document.querySelector('.block-next');
 
-  blockNext.addEventListener('click', () => {
-    blockIndex = Math.min(maxIndex, blockIndex + scrollStep);
-    updateBlockCarousel();
-  });
+      const visibleCount = 4; 
+      const scrollStep = 3;
+      let currentIndex = visibleCount; 
 
-  window.addEventListener('resize', updateBlockCarousel);
-  </script>
+      for(let i = 0; i < visibleCount; i++) {
+          const startClone = items[i].cloneNode(true);
+          const endClone = items[items.length - 1 - i].cloneNode(true);
+          track.appendChild(startClone);
+          track.prepend(endClone);
+      }
+
+      function updatePosition(animate = true) {
+          const itemWidth = items[0].offsetWidth + 20; 
+          track.style.transition = animate ? 'transform 0.5s ease' : 'none';
+          track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+      }
+
+      window.addEventListener('load', () => updatePosition(false));
+
+      nextBtn.addEventListener('click', () => {
+          currentIndex += scrollStep;
+          updatePosition();
+      });
+
+      prevBtn.addEventListener('click', () => {
+          currentIndex -= scrollStep;
+          updatePosition();
+      });
+
+      track.addEventListener('transitionend', () => {
+          const itemWidth = items[0].offsetWidth + 20;
+          // Se ultrapassar o final
+          if (currentIndex >= items.length + visibleCount) {
+              currentIndex = currentIndex - items.length;
+              updatePosition(false);
+          }
+          // Se ultrapassar o início
+          if (currentIndex < visibleCount) {
+              currentIndex = currentIndex + items.length;
+              updatePosition(false);
+          }
+      });
+
+      window.addEventListener('resize', () => updatePosition(false));
+  })();
+</script>
 </body>
 
 </html>
