@@ -4,132 +4,93 @@
 {% block title %}Index{% endblock %}
 
 {% block content %}
-<div class="container">
-<!-- Sidebar -->
-<aside class="sidebar">
-  <div class="logo-area">
-    <img src="/static/img/logo-eva-2.png" alt="Logo Eva" class="logo">
-  </div>
-  <nav class="nav-menu">
-    <ul class="nav-principal">
-      <li><a href="#">Portfólio</a></li>
-      <li><a href="#">Sobre</a></li>
-    </ul>
-    <hr class="divisor">
-    <ul class="nav-secundaria">
-      <li><a href="#">Clubes do Livro</a></li>
-      <li><a href="#">Editoras</a></li>
-      <li><a href="#">Livros</a></li>
-    </ul>
-    <hr class="divisor">
-    <ul class="nav-secundaria">
-      <li><a href="#">Configurações</a></li>
-    </ul>
-  </nav>
-</aside>
+<section class="busca">
+  <input type="text" placeholder="Buscar autores, livros ou portfolios..." class="search-input">
+  <button class="search-button">Buscar</button>
+</section>
 
-<!-- Conteúdo Principal -->
-<main class="main-content">
-  
-  <!--<section class="welcome">
-    <h2></h2>
-    <p></p>
-  </section>-->
-
-  <section class="busca">
-    <input type="text" placeholder="Buscar livros, clubes ou editoras..." class="search-input">
-    <button class="search-button">Buscar</button>
-  </section>
-
-  <section class="carousel">
-    <div class="carousel-container">
-      <div class="carousel-track">
-        <a href="/livros/novo-lancamento" class="carousel-item">
-          <div class="logo-area-carrossel">
-            <h3>Bem-vindos a</h3>
-            <img src="/static/img/logo-eva.png" alt="Logo Eva" class="logo-carrossel">
-          </div>
-          <p>Este é o site Eva, uma plataforma dedicada a conectar leitores, clubes do livro e editoras em um só lugar.</p>
-          <p>Explore nosso catálogo, participe de discussões e descubra sua próxima leitura favorita.</p>
-        </a>
-        <a href="/livros/novo-lancamento" class="carousel-item">
-          <h2>Novo Lançamento</h2>
-          <p>Livro X da Editora Y já disponível!</p>
-        </a>
-        <a href="/clubes/clube-livro-x" class="carousel-item">
-          <h2>Clube do Livro X</h2>
-          <p>Participe do Clube do Livro X!</p>
-        </a>
-        <a href="/editoras/editora-y" class="carousel-item">
-          <h2>Editora Y</h2>
-          <p>Venha conhecer a Editora Y!</p>
-        </a>
-        <a href="/livros/dica-leitura-4" class="carousel-item">
-          <h2>Dica de Leitura 4</h2>
-          <p>Livro X da Editora Y já disponível!</p>
-        </a>
-      </div>
-    </div>
-    <div class="carousel-controls">
-      <button class="prev">&#10094;</button>
-      <button class="next">&#10095;</button>
-    </div>
-  </section>
-
-  <section class="block-carousel">
-    <h2>Novidades</h2>
-    <p>Fique por dentro das últimas novidades do mundo literário digital!</p>
-    <div class="block-carousel-wrapper">
-      <button class="block-prev">&#10094;</button>
-      <div class="block-carousel-container">
-        <div class="block-carousel-track">
-          <a href="#" class="block-item">
-            <img src="/static/img/livro1.jpg" alt="Livro 1">
-            <p>Descrição</p>
-          </a>
-          <a href="#" class="block-item">
-            <img src="/static/img/livro2.jpg" alt="Livro 2">
-            <p>Descrição</p>
-          </a>
-          <a href="#" class="block-item">
-            <img src="/static/img/livro3.jpg" alt="Livro 3">
-            <p>Descrição</p>
-          </a>
-          <a href="#" class="block-item">
-            <img src="/static/img/livro4.jpg" alt="Livro 4">
-            <p>Descrição</p>
-          </a>
-          <a href="#" class="block-item">
-            <img src="/static/img/livro5.jpg" alt="Livro 5">
-            <p>Descrição</p>
-          </a>
-          <a href="#" class="block-item">
-            <img src="/static/img/livro6.jpg" alt="Livro 6">
-            <p>Descrição</p>
-          </a>
-          <a href="#" class="block-item">
-            <img src="/static/img/livro7.jpg" alt="Livro 7">
-            <p>Descrição</p>
-          </a>
-          <a href="#" class="block-item">
-            <img src="/static/img/livro8.jpg" alt="Livro 8">
-            <p>Descrição</p>
-          </a>
+<section class="carousel">
+  <div class="carousel-container">
+    <div class="carousel-track">
+      <a href="/livros/novo-lancamento" class="carousel-item">
+        <div class="logo-area-carrossel">
+          <h3>Bem-vindos a</h3>
+          <img src="/static/img/logo-eva.png" alt="Logo Eva" class="logo-carrossel">
         </div>
-      </div>
-      <button class="block-next">&#10095;</button>
+        <p>Este é o site Eva, uma plataforma dedicada a conectar leitores, clubes do livro e editoras em um só lugar.</p>
+        <p>Explore nosso catálogo, participe de discussões e descubra sua próxima leitura favorita.</p>
+      </a>
+      <a href="/livros/novo-lancamento" class="carousel-item">
+        <h2>Novo Lançamento</h2>
+        <p>Livro X da Editora Y já disponível!</p>
+      </a>
+      <a href="/clubes/clube-livro-x" class="carousel-item">
+        <h2>Clube do Livro X</h2>
+        <p>Participe do Clube do Livro X!</p>
+      </a>
+      <a href="/editoras/editora-y" class="carousel-item">
+        <h2>Editora Y</h2>
+        <p>Venha conhecer a Editora Y!</p>
+      </a>
+      <a href="/livros/dica-leitura-4" class="carousel-item">
+        <h2>Dica de Leitura 4</h2>
+        <p>Livro X da Editora Y já disponível!</p>
+      </a>
     </div>
-  </section>
+  </div>
+  <div class="carousel-controls">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+</section>
 
-  <section class="novo-portfolio">
-    <h2>Portfólios</h2>
-    <p>Acesse os portfólios dos novos autores!</p>
-  </section>
+<section class="block-carousel">
+  <h2>Novidades</h2>
+  <p>Fique por dentro das últimas novidades do mundo literário digital!</p>
+  <div class="block-carousel-wrapper">
+    <button class="block-prev">&#10094;</button>
+    <div class="block-carousel-container">
+      <div class="block-carousel-track">
+        <a href="#" class="block-item">
+          <img src="/static/img/livro1.jpg" alt="Livro 1">
+          <p>Descrição</p>
+        </a>
+        <a href="#" class="block-item">
+          <img src="/static/img/livro2.jpg" alt="Livro 2">
+          <p>Descrição</p>
+        </a>
+        <a href="#" class="block-item">
+          <img src="/static/img/livro3.jpg" alt="Livro 3">
+          <p>Descrição</p>
+        </a>
+        <a href="#" class="block-item">
+          <img src="/static/img/livro4.jpg" alt="Livro 4">
+          <p>Descrição</p>
+        </a>
+        <a href="#" class="block-item">
+          <img src="/static/img/livro5.jpg" alt="Livro 5">
+          <p>Descrição</p>
+        </a>
+        <a href="#" class="block-item">
+          <img src="/static/img/livro6.jpg" alt="Livro 6">
+          <p>Descrição</p>
+        </a>
+        <a href="#" class="block-item">
+          <img src="/static/img/livro7.jpg" alt="Livro 7">
+          <p>Descrição</p>
+        </a>
+        <a href="#" class="block-item">
+          <img src="/static/img/livro8.jpg" alt="Livro 8">
+          <p>Descrição</p>
+        </a>
+      </div>
+    </div>
+    <button class="block-next">&#10095;</button>
+  </div>
+</section>
 
-  <footer>
-    <p>&copy; Eva 2026</p>
-  </footer>
-</main>
-</div>
-
+<section class="novo-portfolio">
+  <h2>Portfólios</h2>
+  <p>Acesse os portfólios dos novos autores!</p>
+</section>
 {% endblock %}
