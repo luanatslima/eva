@@ -9,4 +9,14 @@
   <h2>Portfólio</h2>
   <p>Este é o portfólio de autores.</p>
 </section>
+<section class="portfolio-content">
+  <div class="portfolio-items">
+    {% for item in portfolio_items %}
+    <div class="portfolio-item">
+      <img src="{{ item.image.url }}" alt="{{ item.title }}">
+      <h3>{{ item.title }}</h3>
+      <p>{{ item.description }}</p>
+    </div>
+    {% endfor %}
+  </div>
 {% endblock %}
