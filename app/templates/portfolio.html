@@ -7,16 +7,70 @@
 <section class="portfolio-header">
   <img src="{% static 'img/portfolio-banner.jpg' %}" alt="Banner do Portfólio" class="portfolio-banner">
   <h2>Portfólio</h2>
-  <p>Este é o portfólio de autores.</p>
+  <p>No portfólio de autores, explore e encontre o de seu gosto!</p>
 </section>
+
 <section class="portfolio-content">
+  <h3>Autores em Destaque</h3>
   <div class="portfolio-items">
-    {% for item in portfolio_items %}
     <div class="portfolio-item">
-      <img src="{{ item.image.url }}" alt="{{ item.title }}">
-      <h3>{{ item.title }}</h3>
-      <p>{{ item.description }}</p>
+      <img src="">
+      <h4>Título</h4>
+      <p>Descrição</p>
     </div>
-    {% endfor %}
+    <div class="portfolio-item">
+      <img src="">
+      <h4>Título</h4>
+      <p>Descrição</p>
+    </div>
+    <div class="portfolio-item">
+      <img src="">
+      <h4>Título</h4>
+      <p>Descrição</p>
+    </div>
+    <div class="portfolio-item">
+      <img src="">
+      <h4>Título</h4>
+      <p>Descrição</p>
+    </div>
   </div>
+</section>
+
+<section class="portfolio-content">
+  <h3>Autores por Gênero</h3>
+  Filtro de gênero:
+  <button href="#" class="genre-link">Fantasia</button>
+  <button href="#" class="genre-link">Romance</button>
+  <button href="#" class="genre-link">Romance Policial</button>
+  <button href="#" class="genre-link">Ficção Científica</button>
+  <button href="#" class="genre-link">Mistério</button>
+  <br>
+  <div class="portfolio-items">
+    <div class="portfolio-item">
+      <img src="">
+      <h4>Título</h4>
+      <p>Descrição</p>
+      <p>Gênero: Romance</p>
+    </div>
+    <div class="portfolio-item">
+      <img src="">
+      <h4>Título</h4>
+      <p>Descrição</p>
+      <p>Gênero: Ficção Científica</p>
+    </div>
+    <div class="portfolio-item">
+      <img src="">
+      <h4>Título</h4>
+      <p>Descrição</p>
+      <p>Gênero: Fantasia</p>
+    </div>
+    <div class="portfolio-item">
+      <img src="">
+      <h4>Título</h4>
+      <p>Descrição</p>
+      <p>Gênero: Mistério</p>
+    </div>
+  </div>
+</section>
+
 {% endblock %}
