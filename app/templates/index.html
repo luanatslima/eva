@@ -84,8 +84,66 @@
   </div>
 </section>
 
-<section class="novo-portfolio">
-  <h2>Portfólios</h2>
-  <p>Acesse os portfólios dos novos autores!</p>
+<section class="editoras-apresentacao">
+  <h2>Editoras</h2>
+  <p>Acesse as Editoras e seus catalagos!</p>
+  <div class="texto-editoras">
+    <div class="apresentacao-item">
+      <h3>Editora A</h3>
+      <p>It was popularised in the 1960s with the release of Letraset sheets</p>
+      <p>Lorem Ipsum passages, and more recently with desktop publishing</p>
+      <p>software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    </div>
+    <div class="apresentacao-item">
+      <h3>Editora B</h3>
+      <p>It was popularised in the 1960s with the release of Letraset sheets</p>
+      <p>Lorem Ipsum passages, and more recently with desktop publishing</p>
+      <p>software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    </div>
+    <div class="apresentacao-item">
+      <h3>Editora C</h3>
+      <p>It was popularised in the 1960s with the release of Letraset sheets</p>
+      <p>Lorem Ipsum passages, and more recently with desktop publishing</p>
+      <p>software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    </div>
+    <div class="apresentacao-item">
+      <h3>Editora D</h3>
+      <p>It was popularised in the 1960s with the release of Letraset sheets</p>
+      <p>Lorem Ipsum passages, and more recently with desktop publishing</p>
+      <p>software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    </div>
+  </div>
+</section>
+
+<section class="clube-destaque">
+  <h2>Clube do Livro em Destaque</h2>
+  <p>Junte-se ao nosso clube do livro e participe de discussões envolventes!</p>
+  <div class="clube-destaque">
+    <img src="/static/img/clube-livro.jpg" alt="Clube do Livro">
+    <div class="clube-info">
+      <h3>Clube do Livro X</h3>
+      <p>Participe de discussões semanais sobre o Livro X com outros entusiastas da leitura.</p>
+      <a href="/clubes/clube-livro-x" class="join-button">Junte-se Agora</a>
+    </div>
+</section>
+
+<section class="contato"> 
+  <h2>Contato</h2>
+  <div class="contato-form">
+    <p>Se preferir, entre em contato conosco pelo telefone: (11) 1234-5678</p>
+    <p>Tem alguma dúvida ou sugestão? Entre em contato conosco!</p>
+    <form action="/contato/enviar" method="post">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="mensagem">Mensagem:</label>
+      <textarea id="mensagem" name="mensagem" required></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
 </section>
 {% endblock %}
