@@ -76,6 +76,12 @@
       color: #561C24;
     }
 
+    .menu-item.active {
+      background-color: #804049;
+      display: block;
+      border-radius: 8px;
+    }
+
     .divisor {
       margin: 24px 0;
       border: none;
@@ -439,6 +445,8 @@
       color: #561C24;
       margin-bottom: 8px;
     }
+
+    
   </style>
 </head>
 
@@ -450,19 +458,33 @@
       </div>
       <nav class="nav-menu">
         <ul class="nav-principal">
-          <li><a href="{% url 'index' %}">Início</a></li>
-          <li><a href="{% url 'portfolio' %}">Portfólio</a></li>
-          <li><a href="#">Sobre</a></li>
+          <li class="menu-item {% if request.resolver_match.url_name == 'index' %}active{% endif %}">
+            <a href="{% url 'index' %}">Início</a>
+          </li>
+          <li class="menu-item {% if request.resolver_match.url_name == 'portfolio' %}active{% endif %}">
+            <a href="{% url 'portfolio' %}">Portfólio</a>
+          </li>
+          <li class="menu-item {% if request.resolver_match.url_name == 'sobre' %}active{% endif %}">
+            <a href="{% url 'sobre' %}">Sobre</a>
+          </li>
         </ul>
         <hr class="divisor">
         <ul class="nav-secundaria">
-          <li><a href="#">Clubes do Livro</a></li>
-          <li><a href="#">Editoras</a></li>
-          <li><a href="#">Livros</a></li>
+          <li class="menu-item {% if request.resolver_match.url_name == 'clubes' %}active{% endif %}">
+            <a href="{% url 'clubes' %}">Clubes do Livro</a>
+          </li>
+          <li class="menu-item {% if request.resolver_match.url_name == 'editoras' %}active{% endif %}">
+            <a href="{% url 'editoras' %}">Editoras</a>
+          </li>
+          <li class="menu-item {% if request.resolver_match.url_name == 'livros' %}active{% endif %}">
+            <a href="{% url 'livros' %}">Livros</a>
+          </li>
         </ul>
         <hr class="divisor">
         <ul class="nav-secundaria">
-          <li><a href="#">Configurações</a></li>
+          <li class="menu-item {% if request.resolver_match.url_name == 'configuracoes' %}active{% endif %}">
+            <a href="{% url 'configuracoes' %}">Configurações</a>
+          </li>
         </ul>
       </nav>
     </aside>
