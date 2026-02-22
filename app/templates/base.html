@@ -98,14 +98,20 @@
         justify-content: space-between; 
     } 
 
+    .div-busca{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
     .busca {
       margin-bottom: 45px;
-      text-align: center;
+      text-align: left;
     }
 
     .search-input {
       background-color: #e8d8c4;
-      width: 85%;
+      width: 400px;
       padding: 12px 16px;
       font-size: 16px;
       border: 2px solid #561C24;
@@ -124,6 +130,37 @@
       border-left: none;
       background-color: #561C24;
       color: #e8d8c4;
+      border-radius: 0 8px 8px 0;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .modo-ia{
+      margin-bottom: 45px;
+      text-align: right;
+    }
+
+    .input-ia {
+      background-color: #561C24;
+      width: 400px;
+      padding: 12px 16px;
+      font-size: 16px;
+      border: 2px solid #561C24;
+      border-radius: 10px 0 0 10px;
+      outline: none;
+    }
+
+    .input-ia::placeholder {
+      color: #e8d8c4;
+    }
+
+    .button-ia {
+      padding: 12px 20px;
+      font-size: 16px;
+      border: 2px solid #561C24;
+      border-left: none;
+      background-color: #e8d8c4;
+      color: #561C24;
       border-radius: 0 8px 8px 0;
       cursor: pointer;
       transition: background-color 0.3s;
@@ -525,10 +562,16 @@
     </aside>
 
     <main class="main-content">
-      <section class="busca">
-        <input type="text" placeholder="Buscar autores, livros ou portfolios..." class="search-input">
-        <button class="search-button">Buscar</button>
-      </section>
+      <div class="div-busca">
+        <section class="busca">
+          <input type="text" placeholder="Buscar autores, livros ou portfolios..." class="search-input">
+          <button class="search-button">Buscar</button>
+        </section>
+        <section class="modo-ia">
+          <input type="text" placeholder="Pergunte a IA..." class="input-ia">
+          <button class="button-ia">Buscar</button>
+        </section>
+      </div>
       {% block content %}
       {% endblock %}
       <footer>
